@@ -15,8 +15,7 @@ object TestingTrinoServerMain {
                 |    balance decimal(16,2),
                 |    tid bigint,
                 |    last_updated timestamptz)
-                |PARTITIONED BY (bucket(128, account_id));
-                |ALTER TABLE accounts SET IDENTIFIER FIELDS account_id""".stripMargin
+                |PARTITIONED BY (bucket(128, account_id));""".stripMargin
     println("Started")
     statement.execute(sql)
     val resultSet: ResultSet = statement.getResultSet
